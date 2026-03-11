@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "keFR5zWTH64=",
+  "success": true,
+  "projectFilePath": "/home/notchkxge/devBachelor/ModelDescriptionsApi/ModelDescriptionsApi.csproj",
+  "expectedPackageFiles": [
+    "/home/notchkxge/.nuget/packages/microsoft.aspnetcore.openapi/10.0.2/microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "/home/notchkxge/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
