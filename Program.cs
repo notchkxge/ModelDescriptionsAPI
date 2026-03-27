@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using ModelDescriptionsApi.Data;
 
+SQLitePCL.Batteries.Init();
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSwaggerGen();
@@ -28,5 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapControllers();
 
 app.Run();

@@ -18,7 +18,7 @@ namespace ModelDescriptionsApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Asset3dDTO>> Asset3dDTO([FromForm] Asset3dDTO dto)
+        public async Task<ActionResult<Asset3dDTO>> Asset3dDTO([FromBody] Asset3dDTO dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Name))
             {
@@ -73,7 +73,7 @@ namespace ModelDescriptionsApi.Controllers
             };
         }
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         public async Task<ActionResult<Asset3dDTO>> EditAsset(int id, [FromBody] Asset3dDTO dto)
         {
             if (dto == null)
@@ -123,6 +123,12 @@ namespace ModelDescriptionsApi.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        [HttpGet("ping")]
+        public IActionResult Ping()
+        {
+            return Ok("Pong");
         }
     }
 }
