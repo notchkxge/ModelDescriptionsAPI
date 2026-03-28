@@ -130,5 +130,20 @@ namespace ModelDescriptionsApi.Controllers
         {
             return Ok("Pong");
         }
+
+        [HttpGet("byname/{name}")]
+        public async Task<ActionResult<Asset3dDTO>> GetAssetByName(string name)
+        {
+            var metaData = await _context.asset3ds.FirstOrDefaultAsync(a => a.Name == name);
+            if (metaData == null)
+                return NotFound($"No such modelName: {name}");
+
+            return new Asset3dDTO
+            {
+                Name = metaData.Name,
+                Description = metaData.Description,
+                ModelPath = metaData.ModelPath,
+            };
+        }
     }
 }
